@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Workshop Booking</title>
+    <link rel="stylesheet" href="./workshop.css">
+  </head>
+  <body>
+    <div class="workshop-booking">
+        <h1 class="header">Workshop Booking Tickets</h1>
+
+        <div class="workshopimage-container">
+          <img class="workshop-image" src="../images/workshopimage.png">
+        </div>
+
+        <div>
+          <p class="instructions">Please proceed and confirm your tickets below &#x1F60A;</p>
+        </div>
+
+        <div class="booking-form">
+          <label for="ticketInput">Number of Tickets:</label>
+          <input class="input-number" type="number" id="ticketInput" value="1" min="1">
+          <button class="tickets-button" id="bookButton">Book Tickets</button>
+        </div>
+
+    <div class="booking-results">
+      <p id="eventName">Event: Concert</p>
+      <p id="ticketNumber">Tickets:</p>
+      <p id="finalAmount">Final Amount:</p>
+      <p id="discount">Discount:</p>
+      <p id="seatsLeft">Seats Left:</p>
+    </div>
+
+    <div>
+      <p class="payment-method">Mode of payment</p>
+    </div>
+
+    <div class="image-logos">
+      <img class="mpesa-logo" src="../images/M-PESA_LOGO-01.svg.png">
+       <img class="paypal-logo" src="../images/paypallogo.png">
+       <img class="equity-logo" src="../images/equitybank.png">
+    </div>
+
+    </div>
+
+    <script src="./concert.js"></script>
+    
+  </body>
+</html>

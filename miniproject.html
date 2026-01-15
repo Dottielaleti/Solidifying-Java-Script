@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking System</title>
+    <link rel="stylesheet"  href="miniproject.css">
+</head>
+<body>
+   <div class="background">
+
+    <div class="header-container">
+      <img class="company-logo" src="images/companylogo.png">
+      <h1 class="company-name">EVENT JOY VENTURES</h1>
+    </div>
+
+     <h1 class="header">Ticket Booking System</h1>
+
+     <div class="choose-event">
+      <label for="event">Choose Event:</label>
+      <select id="event">
+        <option value="events/concert.html">Concert</option>
+        <option value="events/conference.html">Conference</option>
+        <option value="events/workshop.html">Workshop</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="ticketCount" class="ticket-numbers">Number of Tickets:</label>
+      <input type="number" id="ticketCount" value="2" class="input-number">
+    </div>
+
+    <div class="button-container">
+      <button id="bookButton" class="book-button">Book Tickets</button>
+    </div>
+   </div>
+
+  
+
+
+    <script src="miniproject.js"></script>
+</body>
+</html>
