@@ -1,0 +1,42 @@
+.background{
+  background-color: lightgreen;
+  font-size: 18px;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+}.ticket-container{
+  font-family: arial;
+  display:inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  height: auto;
+}.your-ticket{
+  color: red;
+}
+.company-logo{
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.company-name{
+  font-style: italic;
+  color: orange;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.ticket-details{
+  font-size: 25px;
+}
+.download-button{
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.download-button:hover{
+  background-color: darkblue;
+}

@@ -9,12 +9,12 @@
 .header{
   color: brown;
 }
-.workshoptimage-container{
+.concertimage-container{
   width: 100%;
   padding: 0;
   height: auto;
 }
-.workshop-image{
+.concert-image{
   width: 100%;
   height: 700px;
   object-fit: cover;
@@ -33,27 +33,15 @@
   margin-top: 30px;
 }
 .input-number{
-  background-color: brown;
-  color: black;
-  text-align: center;
+  background-color: blue;
+  color: whitesmoke;
   font-size: 18px;
   padding: 5px 10px;
-}
-.tickets-button{
-  background-color: blue;
-  border: none;
+  text-align: center;
   border-radius: 5px;
-  font-size: 18px;
-  color: white;
-  padding: 10px 10px;
-  margin-left: 20px;
 }
 .booking-results{
   font-size: 24px;
-}
-.image-logos{
-  text-align: center;
-  margin-top: 20px;
 }
 .mpesa-logo{
   width: 150px;
@@ -65,4 +53,47 @@
 }
 .equity-logo{
   width: 150px;
+}
+.payment-section{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.mpesa-payment,
+.equity-payment,
+.paypal-payment{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mpesa-instructions,
+.paypal-instructions,
+.equity-instructions{
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.proceed-button{
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  padding: 10px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.confirm-button{
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  padding: 10px 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }

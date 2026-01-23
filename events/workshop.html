@@ -4,7 +4,7 @@
     <title>Workshop Booking</title>
     <link rel="stylesheet" href="./workshop.css">
   </head>
-  <body>
+  <body data-event="Workshop">
     <div class="workshop-booking">
         <h1 class="header">Workshop Booking Tickets</h1>
 
@@ -16,33 +16,66 @@
           <p class="instructions">Please proceed and confirm your tickets below &#x1F60A;</p>
         </div>
 
-        <div class="booking-form">
-          <label for="ticketInput">Number of Tickets:</label>
-          <input class="input-number" type="number" id="ticketInput" value="1" min="1">
-          <button class="tickets-button" id="bookButton">Book Tickets</button>
-        </div>
-
     <div class="booking-results">
-      <p id="eventName">Event: Concert</p>
+      <p>Number of Tickets: <span id="ticketInput">1</span></p>
+      <p id="eventName">Event: Workshop</p>
       <p id="ticketNumber">Tickets:</p>
       <p id="finalAmount">Final Amount:</p>
       <p id="discount">Discount:</p>
       <p id="seatsLeft">Seats Left:</p>
     </div>
 
-    <div>
-      <p class="payment-method">Mode of payment</p>
-    </div>
+   <p class="payment-method">Mode of payment</p>
 
-    <div class="image-logos">
-      <img class="mpesa-logo" src="../images/M-PESA_LOGO-01.svg.png">
-       <img class="paypal-logo" src="../images/paypallogo.png">
-       <img class="equity-logo" src="../images/equitybank.png">
-    </div>
+       
 
-    </div>
+    <div id="paymentSection" class="payment-section">
+
+      <div class="mpesa-payment">
+        <img id="mpesaLogo" class="mpesa-logo" src="../images/M-PESA_LOGO-01.svg.png">
+
+       <div id="mpesaInstructions" class="mpesa-instructions">
+        <h3>M-pesa Payment Instructions</h3>
+        <p>Paybill: <strong>836765</strong></p>
+        <p>Account Number: <strong>0708875614</strong></p>
+        <p>Amount: <strong id="mpesaAmount"></strong></p>
+        <p>Please complete your payment using your M-Pesa app or your Simtoolkit.</p>
+       </div>
+      </div>
+
+       <div class="paypal-payment">
+        <img id="paypalLogo" class="paypal-logo" src="../images/paypallogo.png">
+
+       <div class="paypal-instructions"> 
+        <h3>Pay with Paypal</h3>
+        <p>Amount: <strong id="paypalAmount"></strong></p>
+        <p>You'll be redirected to PayPal to complete your payment.</p>
+        <button class="proceed-button">Proceed to PayPal</button>
+       </div>
+      </div>
+
+       <div class="equity-payment">
+         <img id="equityLogo" class="equity-logo" src="../images/equitybank.png">
+
+         <div class="equity-instructions">
+          <h3>Equity Bank Payment</h3>
+          <p>Bank Name: Equity Bank Kenya</p>
+          <p>Paybill: 247247</p>
+          <p>Account Number: <strong>0708875610</strong></p>
+          <p>Account Name: <strong>Event Joy Ventures</strong></p>
+          <p>Amount: <strong id="equityAmount"></strong></p>
+          <p>Please complete your payment through your Equity Bank app, M-pesa or visit the nearest branch.</p>
+         </div>
+       </div>
+
+       <div>
+          <button id="confirmButton" class="confirm-button">Confirm and proceed to download your tickets</button>
+        </div>
+      </div>
 
     <script src="./concert.js"></script>
+    <script src="./payment.js"></script>
+    <script src="./ticket.js"></script>
     
   </body>
 </html>

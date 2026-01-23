@@ -1,45 +1,61 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-      document.addEventListener('DOMContentLoaded', function(){
-      
-      const price = 8000;
-      let totalSeats = Number(localStorage.getItem('concertSeats')) || 100;
-      
-      let ticketCount = Number(localStorage.getItem('tickets')) || 1;
+  const pricePerTicket = 8000;
 
-      function bookTickets() {
+  let totalSeats = Number(localStorage.getItem('concertSeats')) || 100;
+  const ticketInput = document.getElementById('ticketInput');
+  const ticketNumber = document.getElementById('ticketNumber');
+  const finalAmount = document.getElementById('finalAmount');
+  const discountDisplay = document.getElementById('discount');
+  const seatsLeftDisplay = document.getElementById('seatsLeft');
 
-        const inputTickets = Number(document.getElementById('ticketInput').value);
-        ticketCount = inputTickets || ticketCount;
+  const mpesaAmount = document.getElementById('mpesaAmount');
+  const paypalAmount = document.getElementById('paypalAmount');
+  const equityAmount = document.getElementById('equityAmount');
 
-      if (totalSeats <= 0){
-        document.getElementById('seatsLeft').textContent = 'Sold Out';
-        alert('Sorry, no seats left!');
-        return;
-      }
-      
-     if (totalSeats < ticketCount) {
-        alert(`Only ${totalSeats} seats left!`);
-        return;
-      }
+  const confirmButton = document.getElementById('confirmButton');
 
-      totalSeats -= ticketCount;
-      
-      let total = ticketCount * price;
-      let discount = 0;
-      
-      if (total > 20000) {
-        discount = total * 0.1;
-        total -= discount;
-      }
+  const eventName = document.body.getAttribute('data-event') || 'Event';
+
+  
+  let ticketCount = Number(localStorage.getItem('tickets')) || 1;
+  ticketInput.textContent = ticketCount;
+
+  
+  let seatsLeftForDisplay = totalSeats - ticketCount;
+  if (seatsLeftForDisplay < 0) seatsLeftForDisplay = 0;
+
+  
+  let total = ticketCount * pricePerTicket;
+  let discount = 0;
+  if (total > 20000) {
+    discount = total * 0.1;
+    total -= discount;
+  }
+
+  ticketNumber.textContent = `Tickets: ${ticketCount}`;
+  finalAmount.textContent = `Final Amount: ${total}`;
+  discountDisplay.textContent = `Discount: ${discount}`;
+  seatsLeftDisplay.textContent = seatsLeftForDisplay > 0 ? `Seats Left: ${seatsLeftForDisplay}` : 'Sold Out';
+
+  mpesaAmount.textContent = total;
+  paypalAmount.textContent = total;
+  equityAmount.textContent = total;
 
 
-      document.getElementById('ticketNumber').textContent = `Tickets: ${ticketCount}`;
-      document.getElementById('finalAmount').textContent = `Final Amount: ${total}`;
-      document.getElementById('discount').textContent = `Discount: ${discount}`;
-      document.getElementById('seatsLeft').textContent = totalSeats > 0 ? `Seats Left: ${totalSeats}`: 'Sold Out';
+  confirmButton.addEventListener('click', function () {
+    if(ticketCount > totalSeats){
+      alert(`Only ${totalSeats} seats available!`);
+      return;
     }
 
-      document.getElementById('ticketInput').value = ticketCount;
+    localStorage.setItem('ticketEvent', eventName);
+    localStorage.setItem('ticketCount', ticketCount);
+    localStorage.setItem('ticketAmount', total);
 
-      document.getElementById('bookButton').addEventListener('click', bookTickets);
+    totalSeats -= ticketCount;
+    localStorage.setItem('concertSeats', totalSeats);
+
+    location.href = 'ticket.html';
   });
+});

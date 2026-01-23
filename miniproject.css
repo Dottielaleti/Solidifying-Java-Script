@@ -8,7 +8,6 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative
 }
 .background::before {
@@ -24,6 +23,9 @@
 .background * {
   position: relative;
   z-index: 2;
+}
+.general-container{
+  margin-left: 20px;
 }
 .header-container{
   display: flex;
@@ -51,13 +53,36 @@
   margin-top: 40px;
   margin-bottom: 75px;
 }
+.about-us,
+.motto{
+  font-size: 44px;
+  font-weight: bold;
+  color: yellow;
+}
+.aboutus-info,
+.motto-info
+{
+  font-family: arial;
+  font-size: 20px;
+  font-weight: bold;
+  font-style:oblique;
+}
+.ticket-system{
+  font-weight: bold;
+  font-size: 44px;
+  color: yellow;
+  margin-top: 40px;
+  margin-bottom: 45px;
+
+}
 .choose-event{
   font-family: arial;
+  font-weight: bold;
   display:flex;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-size: 35px; 
-  color: blue;  
+  color: black;  
 }
 .choose-event label{
   margin-right: 15px;
@@ -73,9 +98,10 @@
 }
 .ticket-numbers{
   font-family: arial;
+  font-weight: bold;
   font-size: 35px; 
   margin-right: 15px;
-  color: blue;
+  color: black;
  
 }
 .input-number{
@@ -101,12 +127,16 @@
 
 }
 .button-container{
-  text-align: center;
   margin-bottom: 20px;
   margin-top: 75px;
 
 }
-.booking-result h3,
-.summary h3{
-  margin-bottom: 10px;
+.contact-us{
+  font-family: arial;
+  font-size: 20px;
+  font-weight: bold;
+  font-style:oblique;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
+
